@@ -13,7 +13,7 @@ const LoginPage = () => {
   const { isAuth } = useSelector((state) => state.authReducer);
   let from = location?.state?.from || "/";
 
-  
+
   const onChangeHandler = (e) => {
     let { name, value } = e.target;
     let payload = { ...form, [name]: value };
@@ -37,7 +37,8 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Container>
+      <Container     mt='100px'
+>
         <Input
           type={"text"}
           name="username"

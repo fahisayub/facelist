@@ -17,6 +17,9 @@ const NavbarComp = () => {
       size={"md"}
       p="10px"
       justifyContent={"space-between"}
+      pos='fixed'
+      w='full'
+      top='0px'
     >
       <Heading>Facelist</Heading>
       {isAuth ? (
