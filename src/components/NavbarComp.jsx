@@ -12,14 +12,14 @@ const NavbarComp = () => {
 
   return (
     <Flex
-      bg={"facebook.500"}
+      bgGradient="linear(to-r, orange.100, purple.300)"
       color={"white"}
       size={"md"}
       p="10px"
       justifyContent={"space-between"}
-      pos='fixed'
-      w='full'
-      top='0px'
+      pos="fixed"
+      w="full"
+      top="0px"
     >
       <Heading>Facelist</Heading>
       {isAuth ? (

@@ -13,7 +13,6 @@ const HomePage = () => {
 
   const scrollHandler = (e) => {
     const { scrollTop, scrollHeight, clientHeight } = e.target;
-    console.log(Math.floor(scrollTop), scrollHeight, clientHeight);
     if (scrollHeight - Math.floor(scrollTop) === clientHeight) {
       setLoading(true);
       let newpage = page + 1;
@@ -38,7 +37,7 @@ const HomePage = () => {
       onScroll={scrollHandler}
     >
       {contacts.map((contact, i) => {
-        return <ContactCardComp key={contact.id.value} contact={contact} />;
+        return <ContactCardComp key={contact.uuid} contact={contact} />;
       })}
       {loading && <LoadingSkeketon />}
     </Container>

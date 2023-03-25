@@ -4,7 +4,7 @@ export const getContactsApi = (payload) => async (dispatch) => {
 
     dispatch({ type: types.GET_CONTACTS_LOADING });
 //seed can be any fixed value
-    await axios.get(`https://randomuser.me/api/?page=${payload}&results=20&seed=facelist`)
+    await axios.get(`https://randomuser.me/api/?page=${payload}&results=20&seed=contacts`)
         .then((res) => {
             dispatch({ type: types.GET_CONTACTS_SUCCESS, payload: res.data.results });
             console.log(res.data.results);
