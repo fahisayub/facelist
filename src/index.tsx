@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -7,7 +7,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
 import { store } from './store/store';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const container = document.getElementById("root")
+if (!container) throw new Error('Failed to find the root element');
+const root = ReactDOM.createRoot(container)
 root.render(
   <Provider store={store}>
     <BrowserRouter>
