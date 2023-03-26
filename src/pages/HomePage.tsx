@@ -1,21 +1,26 @@
 import { Container } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import { getContactsApi } from "../store/contactReducer/contact.actions";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingSkeketon from "../components/LoadingSkeketon";
-import ContactCardComp from "../components/ContactCardComp";
+import ContactCardComp, { ContactProp } from "../components/ContactCardComp";
+
+
+
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-  const [page, setpage] = useState(1);
-  const { contacts } = useSelector((state) => state.contactReducer);
-  const [loading, setLoading] = useState(false);
+  const dispatch:any = useDispatch();
+  const [page, setpage] = useState<number>(1);
+  const { contacts } = useSelector<unknown,any>((state:any) => state.contactReducer);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const scrollHandler = (e) => {
+  const scrollHandler = (e:any) => {
+    //Get ScrollTop,ScrollHeight and ClientHeight from Syntetic event
     const { scrollTop, scrollHeight, clientHeight } = e.target;
     if (scrollHeight - Math.floor(scrollTop) === clientHeight) {
       setLoading(true);
-      let newpage = page + 1;
+      let newpage:number = page + 1;
       setpage(newpage);
       setTimeout(() => {
         dispatch(getContactsApi(newpage));
@@ -36,8 +41,8 @@ const HomePage = () => {
       h={"90vh"}
       onScroll={scrollHandler}
     >
-      {contacts.map((contact, i) => {
-        return <ContactCardComp key={contact.uuid} contact={contact} />;
+      {contacts.map((contact:ContactProp, i:number) => {
+        return <ContactCardComp  contact={contact} />;
       })}
       {loading && <LoadingSkeketon />}
     </Container>
