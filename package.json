@@ -59,5 +59,6 @@
   },
   "overrides": {
     "@chakra-ui/system": "1.9.1"
-  }
+  },
+  "homepage": "."
 }
