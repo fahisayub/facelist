@@ -22,7 +22,9 @@ The Main Objective of this project is to implement infinite scrolling with loadi
 
 ## User flow
 
-As the user visit the website, user will be redirected to login page and on user enters login credentials {usename:foo, password:bar} user will be redirected back to home page where the user  can view the contact list, as the user scroll down to the end the loading card will be visible and a second later other 10 more contacts will be loaded to the page,this will continue as the user scroll down. On the to right corner of the navbar, logout button will be visible which is not visible if the user is not logged in. On Logout user will be redirected to login page again.
+As the user visits the website, the user will be redirected to the login page. On entering login credentials {usename: foo, password: bar} user will be redirected back to the home page where the user can view the contact list. As the user scrolls down to the end the loading card will be visible and a second later another 10 more contacts will be loaded onto the page. This will continue as the user scrolls down.
+
+In the right corner of the navbar, the logout button will be visible which is not visible if the user is not logged in. On Logout, the user will be redirected to the login page again.
 
 ## Toolsets
 
