@@ -51,6 +51,7 @@ Muhammed Fahiz
 
 ## References
 
+- <https://randomuser.me/documentation#howto>
 - <https://chakra-ui.com/>
 - <https://www.typescriptlang.org/>
 - <https://create-react-app.dev/docs/getting-started/>
