@@ -24,7 +24,7 @@ const LoginPage= () => {
   }, [from, navigate, isAuth]);
 
   return (
-    <Container pt="100px" maxW="full" h="100vh">
+    <Container pt="100px" maxW="full" h="100vh" data-cy='login-page'>
       <LoginForm/>
     </Container>
   );

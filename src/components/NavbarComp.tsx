@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutApi } from "../store/authReducer/auth.actions";
 
 const NavbarComp = () => {
-  const dispatch:any = useDispatch();
-  const { isAuth } = useSelector<unknown,any>((state:any) => state.authReducer);
+  const dispatch: any = useDispatch();
+  const { isAuth } = useSelector<unknown, any>((state: any) => state.authReducer);
   const logoutHandler = () => {
     dispatch(logoutApi());
   };
@@ -20,10 +20,11 @@ const NavbarComp = () => {
       w="full"
       top="0px"
       zIndex={'1'}
+      data-cy='fixed-navbar'
     >
       <Heading>Facelist</Heading>
       {isAuth ? (
-        <Button colorScheme="red" onClick={logoutHandler}>
+        <Button data-cy="logout-button" colorScheme="red" onClick={logoutHandler}>
           Logout
         </Button>
       ) : null}

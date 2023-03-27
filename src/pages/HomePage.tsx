@@ -40,6 +40,7 @@ const HomePage = () => {
       overflowY={"auto"}
       h={"90vh"}
       onScroll={scrollHandler}
+      data-cy="contact-list"
     >
       {contacts.map((contact:ContactProp, i:number) => {
         return <ContactCardComp  contact={contact} />;

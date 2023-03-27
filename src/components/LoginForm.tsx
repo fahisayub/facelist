@@ -5,11 +5,9 @@ import {
     FormLabel,
     Heading,
     Input,
-    useToast,
 } from "@chakra-ui/react";
 import LoginButton from './LoginButton';
-import { useDispatch } from 'react-redux';
-import { loginApi } from '../store/authReducer/auth.actions';
+
 
 
 export interface UserProps {
@@ -19,9 +17,6 @@ export interface UserProps {
 
 const LoginForm = () => {
     const [form, setForm] = useState<UserProps>({ username: '', password: '' });
-    const dispatch: any = useDispatch();
-    const toast: any = useToast();
-
     const onChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
         let { name, value }: EventTarget & HTMLInputElement = e.target;
         let payload: UserProps = { ...form, [name]: value };
@@ -29,29 +24,7 @@ const LoginForm = () => {
         setForm(payload);
     };
 
-    const onLoginHandler = () => {
-        if (form.username === "foo" && form.password === "bar") {
-            dispatch(loginApi(form)).then(() =>
-                toast({
-                    title: "Login Success.",
-                    description: `Welcome ${form.username}, you have successfully logged in`,
-                    status: "success",
-                    duration: 5000,
-                    isClosable: true,
-                    position: "top",
-                })
-            );
-        } else {
-            toast({
-                title: "Login failed",
-                description: "Invalid username or password",
-                status: "error",
-                duration: 5000,
-                isClosable: true,
-                position: "top",
-            });
-        }
-    };
+   
     return (
         <Box
             m="auto"
@@ -60,12 +33,14 @@ const LoginForm = () => {
             p="20px"
             maxW={['full', "50%"]}
             bgGradient="linear(to-r, orange.100, purple.300)"
+            data-cy='login-form'
         >
             <Heading
                 textAlign={"center"}
                 p="20px"
                 bgClip="text"
                 bgGradient="linear(to-r, teal.500, green.500)"
+                data-cy='login-heading'
             >
                 Login
             </Heading>
@@ -75,6 +50,7 @@ const LoginForm = () => {
                 name="username"
                 placeholder="Username (eg:foo)"
                 onChange={onChangeHandler}
+                data-cy='username-input'
             />
             <FormLabel>Password</FormLabel>
             <Input
@@ -82,9 +58,10 @@ const LoginForm = () => {
                 name="password"
                 placeholder="Password (eg:bar)"
                 onChange={onChangeHandler}
+                data-cy='password-input'
             />
             <Center>
-                <LoginButton onClick={onLoginHandler} />
+                <LoginButton  form={form} />
             </Center>
         </Box>
     );

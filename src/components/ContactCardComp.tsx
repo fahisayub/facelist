@@ -37,6 +37,7 @@ const ContactCardComp = ({ contact }: Props) => {
       textAlign={['center', "left"]}
       bgGradient="linear(to-r, orange.100, purple.300)"
     key={contact.uuid}
+    data-cy="contact-card"
     >
       <Avatar size={['md', 'lg', 'lg', 'xl', "xl"]}
         src={contact.picture.large} />
