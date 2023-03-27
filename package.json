@@ -9,7 +9,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.5.0",
     "@types/node": "^18.15.9",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
@@ -30,7 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +51,8 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/mocha": "^10.0.1",
     "cypress": "^12.8.1",
     "source-map-loader": "^4.0.1",
     "ts-loader": "^9.4.2"
